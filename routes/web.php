@@ -31,5 +31,7 @@ Route::get('/book-detail/{nama}', [Controller::class, 'show']);
 Route::get('/tambah', function (Request $request) {
     $angka1 = $request->query('angka1', 0);
     $angka2 = $request->query('angka2', 0);
+    $hasil = $angka1 + $angka2;
+    //  return response()->json(['hasil' => $hasil]);
     return view('tambah', compact('angka1', 'angka2', 'hasil'));
 });
