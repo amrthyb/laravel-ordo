@@ -17,6 +17,6 @@ Route::get('heloo', function () {
     return 'hello word';
 });
 
-Route::get('/user/{id}', function ($id) {
-    return 'User ' . $id;
+Route::get('/perkalian/{id}', function ($id) {
+    return 'Angka ' . $id;
 });
