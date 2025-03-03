@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\BookController;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,5 +19,7 @@ Route::get('heloo', function () {
 });
 
 Route::get('/perkalian/{id}', function ($id) {
+    // $id=$id*2;
     return 'Angka ' . $id;
 });
+
