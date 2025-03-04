@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -35,3 +36,8 @@ Route::get('/tambah', function (Request $request) {
     //  return response()->json(['hasil' => $hasil]);
     return view('tambah', compact('angka1', 'angka2', 'hasil'));
 });
+
+
+//car
+Route::get('/cars', [CarsController::class, 'showCars']);
+

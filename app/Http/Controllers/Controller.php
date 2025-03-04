@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
-
+use Illuminate\Support\Facades\DB;
 class Controller extends BaseController
 {
     public function index()
@@ -38,4 +38,6 @@ class Controller extends BaseController
 
         return view('tambah', compact('angka1', 'angka2', 'hasil'));
     }
+
+
 }
