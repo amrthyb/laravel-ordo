@@ -39,5 +39,7 @@ Route::get('/tambah', function (Request $request) {
 
 
 //car
-Route::get('/cars', [CarsController::class, 'showCars']);
+Route::get('/insert-cars', [CarsController::class, 'insertCars']);
 
+Route::get('/cars', [CarsController::class, 'showCars']);
+Route::get('/cars/add', [CarsController::class, 'addCars'])->name('cars.add');
