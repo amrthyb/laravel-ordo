@@ -8,6 +8,16 @@
 <body>
     <h2>Penjumlahan Angka</h2>
 
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     <form method="GET" action="{{ url('/tambah') }}">
         <label for="angka1">Angka 1:</label>
         <input type="number" name="angka1" value="{{ $angka1 }}" required>

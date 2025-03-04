@@ -23,4 +23,19 @@ class Controller extends BaseController
 
         //
     }
+    public function tambah(Request $request)
+    {
+        // Validasi input
+        $validatedData = $request->validate([
+            'angka1' => ['required', 'numeric'],
+            'angka2' => ['required', 'numeric'],
+        ]);
+
+        // Jika validasi sukses, lakukan perhitungan
+        $angka1 = $request->input('angka1');
+        $angka2 = $request->input('angka2');
+        $hasil = $angka1 + $angka2;
+
+        return view('tambah', compact('angka1', 'angka2', 'hasil'));
+    }
 }
