@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Mobil</title>
+    <title>Daftar Ulasan</title>
 </head>
 <body>
     <h2>Daftar Ulasan</h2>
@@ -26,6 +26,5 @@
             </tr>
         </tbody>
     </table>
-
 </body>
 </html>

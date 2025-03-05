@@ -3,6 +3,8 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CarsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\FeatureController;
+use App\Models\Feature;
 use App\Models\Cars;
 use App\Models\Reviews;
 use Illuminate\Http\Request;
@@ -17,7 +19,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('heloo', function () {
+Route::get('hello', function () {
     return 'hello word';
 });
 // routing
@@ -39,7 +41,6 @@ Route::get('/tambah', function (Request $request) {
     return view('tambah', compact('angka1', 'angka2', 'hasil'));
 });
 
-
 //car
 Route::get('/insert-cars', [CarsController::class, 'insertCars']);
 
@@ -51,3 +52,13 @@ Route::get('/add-cars', [CarsController::class, 'addCars'])->name('add.cars');
 
 Route::get('/add-car', [ReviewController::class, 'addCarWithReviews']);
 Route::get('/car/{id}', [ReviewController::class, 'showCarWithReviews']);
+
+
+// Route untuk menambahkan fitur
+Route::get('/add-feature', [FeatureController::class, 'addFeatures']);
+
+Route::get('/add-car-features', [FeatureController::class, 'assignFeatureToCar']);
+
+Route::get('/view-car-features', [FeatureController::class, 'getCarFeatures']);
+
+
