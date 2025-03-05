@@ -13,11 +13,17 @@ class Cars extends Model
     // protected $table = 'cars';
 
     // protected $fillable = ['nama', 'jenis', 'harga', 'tanggal_pembuatan'];
-    protected $fillable = ['nama', 'jenis', 'harga', 'tanggal_pembuatan', 'manufactures_id'];
+    protected $fillable = ['nama', 'jenis', 'harga', 'tanggal_pembuatan', 'manufactures_id', 'reviews_id'];
 
     // Relasi ke Manufactures (many to one)
     public function manufactures()
     {
         return $this->belongsTo(Manufactures::class, 'manufactures_id');
+    }
+
+    // Relasi One to Many (Satu mobil bisa memiliki banyak review)
+    public function reviews()
+    {
+        return $this->hasMany(Reviews::class);
     }
 }

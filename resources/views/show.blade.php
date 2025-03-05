@@ -1,22 +1,31 @@
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Daftar Mobil</title>
 </head>
 <body>
-    <h1>{{ $car->nama }}</h1>
-    <p>{{ $car->jenis }} - {{ number_format($car->harga, 2) }}</p>
+    <h2>Daftar Ulasan</h2>
 
-    <h2>Ulasan Mobil:</h2>
-    <ul>
-        @foreach ($car->reviews as $review)
-            <li>
-                <strong>{{ $review->nama }}</strong> (Nilai: {{ $review->nilai }})<br>
-                {{ $review->isi }}
-            </li>
-        @endforeach
-    </ul>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nama customer</th>
+                <th>Ulasan</th>
+                <th>Nilai</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+ @foreach($cars->reviews as $review)
+            <td>{{ $review->nama }}</td>
+            <td>{{ $review->isi }}</td>
+            <td>{{ $review->nilai }}</td>
+             @endforeach
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 </html>

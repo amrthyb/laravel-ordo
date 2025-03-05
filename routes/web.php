@@ -3,6 +3,8 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CarsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
+use App\Models\Cars;
+use App\Models\Reviews;
 use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +49,5 @@ Route::get('/cars/add', [CarsController::class, 'addCars'])->name('cars.add');
 Route::get('/show-cars', [CarsController::class, 'showCars']);
 Route::get('/add-cars', [CarsController::class, 'addCars'])->name('add.cars');
 
-Route::get('/car/{carId}/add-review', [ReviewController::class, 'addReview']);
-Route::get('/car/{carId}/reviews', [ReviewController::class, 'showCarWithReviews']);
-
+Route::get('/add-car', [ReviewController::class, 'addCarWithReviews']);
+Route::get('/car/{id}', [ReviewController::class, 'showCarWithReviews']);

@@ -6,6 +6,7 @@ use App\Models\Car; // Pastikan nama model sesuai
 use App\Models\Review;
 use App\Models\Cars;
 use App\Models\Manufactures;
+use App\Models\Reviews;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Termwind\Components\Dd;
@@ -60,8 +61,8 @@ class CarsController extends Controller
 
         public function showCars()
         {
-            $cars = Cars::with('manufactures')->get();
-            // dd($cars); // Mengambil mobil dengan relasi pabrik
+            $cars = Cars::with('manufactures')->get();// Mengambil mobil dengan relasi pabrik
+            // dd($cars); meliht dengan json
             return view('cars', compact('cars'));
         }
     }

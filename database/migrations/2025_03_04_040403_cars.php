@@ -19,6 +19,7 @@ return new class extends Migration
             $table->date('tanggal_pembuatan');
             $table->unsignedBigInteger('manufactures_id');
             $table->foreign('manufactures_id')->references('id')->on('manufactures');
+
             $table->timestamps();
         });
     }

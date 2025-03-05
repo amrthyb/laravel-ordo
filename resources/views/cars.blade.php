@@ -30,6 +30,7 @@
                     <td>{{ $car->manufactures ? $car->manufactures->alamat : 'Tidak Ada Pabrik' }}</td>
                 </tr>
             @endforeach
+
         </tbody>
     </table>
 
