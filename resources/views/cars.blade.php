@@ -9,21 +9,29 @@
     <h2>Daftar Mobil</h2>
 
     <table border="1">
-        <tr>
-            <th>Nama</th>
-            <th>Jenis</th>
-            <th>Harga</th>
-            <th>Tanggal Pembuatan</th>
-        </tr>
-        @foreach($cars as $car)
-        <tr>
-            <td>{{ $car->nama }}</td>
-            <td>{{ $car->jenis }}</td>
-            <td>Rp{{ number_format($car->harga, 0, ',', '.') }}</td>
-            <td>{{ $car->tanggal_pembuatan }}</td>
-
-        </tr>
-        @endforeach
+        <thead>
+            <tr>
+                <th>Nama Mobil</th>
+                <th>Jenis</th>
+                <th>Harga</th>
+                <th>Tanggal Pembuatan</th>
+                <th>Nama Pabrik</th>
+                <th>Alamat Pabrik</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($cars as $car)
+                <tr>
+                    <td>{{ $car->nama }}</td>
+                    <td>{{ $car->jenis }}</td>
+                    <td>{{ number_format($car->harga, 2) }}</td>
+                    <td>{{ $car->tanggal_pembuatan }}</td>
+                    <td>{{ $car->manufactures ? $car->manufactures->nama : 'Tidak Ada Pabrik' }}</td>
+                    <td>{{ $car->manufactures ? $car->manufactures->alamat : 'Tidak Ada Pabrik' }}</td>
+                </tr>
+            @endforeach
+        </tbody>
     </table>
+
 </body>
 </html>

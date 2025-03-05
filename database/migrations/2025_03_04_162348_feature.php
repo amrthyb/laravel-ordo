@@ -11,24 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cars', function (Blueprint $table) {
+        Schema::create('car_feature', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('jenis');
-            $table->decimal('harga', 15, 2);
-            $table->date('tanggal_pembuatan');
-            $table->unsignedBigInteger('manufactures_id');
-            $table->foreign('manufactures_id')->references('id')->on('manufactures');
             $table->timestamps();
         });
     }
-
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('cars');
+        Schema::dropIfExists('car_feature');
     }
 };

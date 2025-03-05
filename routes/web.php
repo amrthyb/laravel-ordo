@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CarsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Controller;
@@ -43,3 +43,10 @@ Route::get('/insert-cars', [CarsController::class, 'insertCars']);
 
 Route::get('/cars', [CarsController::class, 'showCars']);
 Route::get('/cars/add', [CarsController::class, 'addCars'])->name('cars.add');
+
+Route::get('/show-cars', [CarsController::class, 'showCars']);
+Route::get('/add-cars', [CarsController::class, 'addCars'])->name('add.cars');
+
+Route::get('/car/{carId}/add-review', [ReviewController::class, 'addReview']);
+Route::get('/car/{carId}/reviews', [ReviewController::class, 'showCarWithReviews']);
+
